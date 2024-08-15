@@ -21,6 +21,6 @@
       import_role:
         name: cv_deploy
       vars:
-        cv_server: # Update the lab CV URL  ex, example1.topo.testdrive.arista.com
+        cv_server: https://tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
         cv_token: "{{ lab_token }}"
         cv_run_change_control: true
