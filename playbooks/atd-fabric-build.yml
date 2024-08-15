@@ -44,9 +44,11 @@
       delegate_to: localhost
       run_once: true
 
-    - ansible.builtin.command: ls /etc/motd/runner/inventory/intended/structured_configs
+    - ansible.builtin.command: ls /runner/inventory/intended/structured_configs
       register: structured
-
+      delegate_to: localhost
+      run_once: true
+      
     - debug:
         var: structured
         
