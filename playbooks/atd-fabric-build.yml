@@ -19,6 +19,8 @@
           name: aap-demo
           duplicate_detection: no
       register: repository
+      delegate_to: localhost
+      run_once: true
 
   tasks:
 
@@ -39,4 +41,6 @@
         user:
           name: "{{ username }}"
           email: "{{ email }}"
+      delegate_to: localhost
+      run_once: true
      
