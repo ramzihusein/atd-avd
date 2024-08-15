@@ -10,6 +10,17 @@
     execute_tasks: false
   tasks:
 
+    - name: Retrieve a repository from a distant location and make it available to the local EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "https://github.com/andubiel/atd-avd.git"
+        parent_directory: /tmp/
+        branch:
+          name: aap-demo
+          duplicate_detection: no
+      register: repository
+      when: inventory_hostname == 'localhost'
+
     - name: Generate intended variables
       import_role:
         name: eos_designs
@@ -17,3 +28,12 @@
     - name: Generate device intended config and documentation
       import_role:
         name: eos_cli_config_gen
+
+    - name: Publish the changes
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        token: "{{ password }}"
+        user:
+          name: "{{ username }}"
+          email: "{{ email }}"
+      when: inventory_hostname == 'localhost'
