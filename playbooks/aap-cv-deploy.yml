@@ -32,15 +32,6 @@
       import_role:
         name: eos_cli_config_gen
 
-    - name: Provision CV with AVD configuration
-      import_role:
-        name: cv_deploy
-      vars:
-        cv_server: https://tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
-        cv_token: "{{ lab_token }}"
-        cv_run_change_control: true
-  post_tasks:
-
     - name: Publish the changes
       ansible.scm.git_publish:
         path: "{{ repository['path'] }}"
@@ -50,3 +41,15 @@
           email: "{{ email }}"
       delegate_to: localhost
       run_once: true
+
+
+    - name: Provision CV with AVD configuration
+      import_role:
+        name: cv_deploy
+      vars:
+        cv_server: https://tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
+        cv_token: "{{ lab_token }}"
+        cv_run_change_control: true
+ 
+
+    
