@@ -28,6 +28,11 @@
     - name: Generate device intended config and documentation
       include_role:
         name: eos_cli_config_gen
+    
+    - ansible.builtin.copy:
+        src: /runner/inventory/intended/structured_configs/
+        dest: inventory/intended/structured_configs/
+
 
     - name: Publish the changes
       ansible.scm.git_publish:
