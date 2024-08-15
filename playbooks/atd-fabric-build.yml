@@ -32,15 +32,16 @@
     
     - ansible.builtin.file:
          path: /tmp/atd-avd/atd-inventory/intended/structured_configs/
-         state: directory
+         state: absent
          mode: '0755'
       delegate_to: localhost
       run_once: true
 
-    - name: Touch 
-      ansible.builtin.file:
-        path: /tmp/atd-avd/atd-inventory/intended/structured_configs/test.txt
-        state: touch
+    - name: copy
+      ansible.builtin.copy:
+        dest: /tmp/atd-avd/atd-inventory/intended/structured_configs/
+        src: /runner/inventory/intended/structured_configs
+        force: true
       delegate_to: localhost
       run_once: true
 
@@ -48,7 +49,7 @@
       register: structured
       delegate_to: localhost
       run_once: true
-      
+
     - debug:
         var: structured
         
