@@ -1,7 +1,7 @@
 ---
 - name: Configuration deployment with CVP
   hosts: cv_servers
-  #connection: local
+  connection: local
   gather_facts: false
   collections:
     - arista.avd
