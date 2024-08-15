@@ -16,7 +16,7 @@
           url: "https://github.com/andubiel/atd-avd.git"
         parent_directory: /tmp/
         branch:
-          name: aap-demo
+          name: master
           duplicate_detection: no
       register: repository
       delegate_to: localhost
