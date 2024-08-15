@@ -43,6 +43,12 @@
         state: touch
       delegate_to: localhost
       run_once: true
+
+    - ansible.builtin.command: ls /etc/motd/runner/inventory/intended/structured_configs
+      register: structured
+
+    - debug:
+        var: structured
         
     - name: Publish the changes
       ansible.scm.git_publish:
