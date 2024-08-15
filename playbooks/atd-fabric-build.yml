@@ -32,6 +32,8 @@
     - ansible.builtin.copy:
         src: /runner/inventory/intended/structured_configs/
         dest: atd-inventory/intended/structured_configs/
+      delegate_to: localhost
+      run_once: true
 
 
     - name: Publish the changes
