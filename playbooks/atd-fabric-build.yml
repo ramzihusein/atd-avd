@@ -8,7 +8,7 @@
   vars:
     fabric_dir_name: "{{fabric_name}}"
     execute_tasks: false
-  tasks:
+  pre_tasks:
 
     - name: Retrieve a repository from a distant location and make it available to the local EE
       ansible.scm.git_retrieve:
@@ -19,7 +19,8 @@
           name: aap-demo
           duplicate_detection: no
       register: repository
-      when: inventory_hostname == 'localhost'
+
+  tasks:
 
     - name: Generate intended variables
       import_role:
@@ -29,6 +30,8 @@
       import_role:
         name: eos_cli_config_gen
 
+  post_tasks:
+
     - name: Publish the changes
       ansible.scm.git_publish:
         path: "{{ repository['path'] }}"
@@ -36,4 +39,4 @@
         user:
           name: "{{ username }}"
           email: "{{ email }}"
-      when: inventory_hostname == 'localhost'
+     
