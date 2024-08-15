@@ -29,9 +29,10 @@
       include_role:
         name: eos_cli_config_gen
     
-    - ansible.builtin.copy:
-        src: /runner/inventory/intended/structured_configs/
-        dest: /tmp/atd-avd/atd-inventory/intended/structured_configs/
+    - ansible.builtin.file:
+         path: /tmp/atd-avd/atd-inventory/intended/structured_configs/
+         state: directory
+         mode: '0755'
       delegate_to: localhost
       run_once: true
 
