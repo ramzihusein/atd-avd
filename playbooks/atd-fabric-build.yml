@@ -43,7 +43,7 @@
           email: "{{ email }}"
       delegate_to: localhost
       run_once: true
-      
+
 - name: Configuration deployment with CVP
   hosts: cv_servers
   connection: local
@@ -51,6 +51,18 @@
   collections:
     - arista.avd
   tasks:
+    - name: Retrieve a repository from a distant location and make it available to the local EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "https://github.com/andubiel/atd-avd.git"
+        parent_directory: /tmp/
+        branch:
+          name: aap-demo
+          duplicate_detection: no
+      register: repository
+      delegate_to: localhost
+      run_once: true
+
     - name: Provision CVP with AVD configuration
       import_role:
         name: eos_config_deploy_cvp
