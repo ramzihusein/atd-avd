@@ -1,4 +1,3 @@
----
 - name: Configuration deployment with CVP
   hosts: cv_servers
   connection: local
@@ -6,6 +5,17 @@
   collections:
     - arista.avd
   tasks:
+    - name: Retrieve a repository from a distant location and make it available to the local EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "https://github.com/andubiel/atd-avd.git"
+        branch:
+          name: master
+          duplicate_detection: no
+      register: repository
+      delegate_to: localhost
+      run_once: true
+
     - name: Provision CVP with AVD configuration
       import_role:
         name: eos_config_deploy_cvp
@@ -13,3 +23,13 @@
         container_root: 'ATD_FABRIC'
         configlets_prefix: 'AVD'
         state: present
+     
+    - name: Publish the changes
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        token: "{{ password }}"
+        user:
+          name: "{{ username }}"
+          email: "{{ email }}"
+      delegate_to: localhost
+      run_once: true
