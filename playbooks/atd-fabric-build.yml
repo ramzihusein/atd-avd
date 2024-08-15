@@ -8,7 +8,7 @@
   vars:
     fabric_dir_name: "{{fabric_name}}"
     execute_tasks: false
-  pre_tasks:
+  tasks:
 
     - name: Retrieve a repository from a distant location and make it available to the local EE
       ansible.scm.git_retrieve:
@@ -22,8 +22,6 @@
       delegate_to: localhost
       run_once: true
 
-  tasks:
-
     - name: Generate intended variables
       import_role:
         name: eos_designs
@@ -31,8 +29,6 @@
     - name: Generate device intended config and documentation
       import_role:
         name: eos_cli_config_gen
-
-  post_tasks:
 
     - name: Publish the changes
       ansible.scm.git_publish:
@@ -51,18 +47,6 @@
   collections:
     - arista.avd
   tasks:
-    - name: Retrieve a repository from a distant location and make it available to the local EE
-      ansible.scm.git_retrieve:
-        origin:
-          url: "https://github.com/andubiel/atd-avd.git"
-        parent_directory: /tmp/
-        branch:
-          name: aap-demo
-          duplicate_detection: no
-      register: repository
-      delegate_to: localhost
-      run_once: true
-
     - name: Provision CVP with AVD configuration
       import_role:
         name: eos_config_deploy_cvp
