@@ -29,6 +29,12 @@
     - name: Generate device intended config and documentation
       include_role:
         name: eos_cli_config_gen
+    
+    - ansible.builtin.file:
+         path: /tmp/atd-avd/atd-inventory/intended/structured_configs/
+         state: absent
+      delegate_to: localhost
+      run_once: true
 
     - name: copy
       ansible.builtin.copy:
