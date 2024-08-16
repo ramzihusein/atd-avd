@@ -30,6 +30,30 @@
          state: absent
       delegate_to: localhost
       run_once: true
+ 
+    - name: Publish the changes
+      ansible.scm.git_publish:
+        path: "{{ repository['path'] }}"
+        token: "{{ password }}"
+        user:
+          name: "{{ username }}"
+          email: "{{ email }}"
+      delegate_to: localhost
+      run_once: true
+
+    - name: Retrieve a repository from a distant location and make it available to the local EE
+      ansible.scm.git_retrieve:
+        origin:
+          url: "https://github.com/andubiel/atd-avd.git"
+        parent_directory: /tmp/
+        branch:
+          name: master
+          duplicate_detection: no
+      register: repository
+      delegate_to: localhost
+      run_once: true
+
+    
 
     - name: copy
       ansible.builtin.copy:
