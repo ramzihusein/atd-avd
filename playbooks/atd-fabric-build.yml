@@ -31,18 +31,24 @@
         name: eos_cli_config_gen
     
     - ansible.builtin.file:
-         path: /tmp/atd-avd/atd-inventory/intended/structured_configs
+         path: /tmp/atd-avd/atd-inventory/intended/{{ item }}
          state: absent
       delegate_to: localhost
       run_once: true
-
+      loop:
+       - structured_configs
+       - ATD_FABRIC
+            
     - name: copy
       ansible.builtin.copy:
         dest: /tmp/atd-avd/atd-inventory/intended/
-        src: /runner/inventory/intended/structured_configs
+        src: /runner/inventory/intended/{{ item }}
         force: true
       delegate_to: localhost
       run_once: true
+      loop:
+       - structured_configs
+       - ATD_FABRIC
 
     - ansible.builtin.command: ls /runner/inventory/intended/structured_configs
       register: structured
