@@ -26,10 +26,6 @@
       include_role:
         name: eos_designs
 
-    - name: Generate device intended config and documentation
-      include_role:
-        name: eos_cli_config_gen
-    
     - ansible.builtin.file:
          path: /tmp/atd-avd/atd-inventory/intended/{{ item }}
          state: absent
@@ -50,14 +46,10 @@
        - structured_configs
        - ATD_FABRIC
 
-    - ansible.builtin.command: ls /runner/inventory/intended/structured_configs
-      register: structured
-      delegate_to: localhost
-      run_once: true
-
-    - debug:
-        var: structured
-        
+    - name: Generate device intended config and documentation
+      include_role:
+        name: eos_cli_config_gen
+     
     - name: Publish the changes
       ansible.scm.git_publish:
         path: "{{ repository['path'] }}"
