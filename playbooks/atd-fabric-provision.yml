@@ -9,6 +9,7 @@
       ansible.scm.git_retrieve:
         origin:
           url: "https://github.com/andubiel/atd-avd.git"
+        parent_directory: /tmp/
         branch:
           name: master
           duplicate_detection: no
@@ -32,7 +33,7 @@
 
     - name: copy
       ansible.builtin.copy:
-        dest: /tmp/atd-avd/atd-inventory/intended/structured_configs
+        dest: /tmp/atd-avd/atd-inventory/intended/structured_configs/
         src: /runner/inventory/intended/structured_configs/cvp
         force: true
       delegate_to: localhost
