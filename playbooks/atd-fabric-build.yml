@@ -37,14 +37,16 @@
             
     - name: copy
       ansible.builtin.copy:
-        dest: /tmp/atd-avd/atd-inventory/{{ item }}
-        src: /runner/inventory/{{ item }}
+        dest: '{{ item.dest }}'
+        src: '{{ item.src }}'
         force: true
       delegate_to: localhost
       run_once: true
       loop:
-       - intended/structured_configs
-       - documentation/ATD_FABRIC
+       - dest: /tmp/atd-avd/atd-inventory/intended/
+         src:  /runner/inventory/intended/structured_configs
+       - dest: /tmp/atd-avd/atd-inventory/documentation/
+         src:  /runner/inventory/intended/structured_configs
 
     - name: Generate device intended config and documentation
       include_role:
