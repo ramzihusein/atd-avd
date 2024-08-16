@@ -18,6 +18,7 @@ local_users:
     privilege: 15
     role: network-admin
     sha512_password: "{{ sha_password }}"
+    #sha512_password: "{{ user_pass | password_hash('sha512', salt='arista') }}"
 
 cvp_instance_ips:
   - 192.168.0.5

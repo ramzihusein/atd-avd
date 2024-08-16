@@ -42,10 +42,10 @@ all:
             ATD_LEAFS:
 
   vars:
-    #ansible_user: arista
-    ansible_user: service_account
+    ansible_user: arista
+    #ansible_user: service_account
     ansible_password: "{{ user_pass | arista.avd.default(lookup('env', 'LABPASSPHRASE')) }}"
-    # user_pass: <Enter lab password here>
+    #user_pass: <Enter lab password here>
     ansible_network_os: arista.eos.eos
     # Configure privilege escalation
     ansible_become: true

@@ -32,8 +32,8 @@
       delegate_to: localhost
       run_once: true
       loop:
-       - intended/structured_configs
-       - documentation/ATD_FABRIC
+       - intended/structured_configs/
+       - documentation/ATD_FABRIC/
             
     - name: copy
       ansible.builtin.copy:
