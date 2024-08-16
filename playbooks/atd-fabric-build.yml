@@ -27,24 +27,24 @@
         name: eos_designs
 
     - ansible.builtin.file:
-         path: /tmp/atd-avd/atd-inventory/intended/{{ item }}
+         path: /tmp/atd-avd/atd-inventory/{{ item }}
          state: absent
       delegate_to: localhost
       run_once: true
       loop:
-       - structured_configs
-       - ATD_FABRIC
+       - intended/structured_configs
+       - documentation/ATD_FABRIC
             
     - name: copy
       ansible.builtin.copy:
-        dest: /tmp/atd-avd/atd-inventory/intended/
-        src: /runner/inventory/intended/{{ item }}
+        dest: /tmp/atd-avd/atd-inventory/{{ item }}
+        src: /runner/inventory/{{ item }}
         force: true
       delegate_to: localhost
       run_once: true
       loop:
-       - structured_configs
-       - ATD_FABRIC
+       - intended/structured_configs
+       - documentation/ATD_FABRIC
 
     - name: Generate device intended config and documentation
       include_role:
