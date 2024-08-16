@@ -46,7 +46,7 @@
        - dest: /tmp/atd-avd/atd-inventory/intended/
          src:  /runner/inventory/intended/structured_configs
        - dest: /tmp/atd-avd/atd-inventory/documentation/
-         src:  /runner/inventory/intended/structured_configs
+         src:  /runner/inventory/intended/ATD_FABRIC
 
     - name: Generate device intended config and documentation
       include_role:
