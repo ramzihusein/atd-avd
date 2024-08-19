@@ -22,7 +22,7 @@
       run_once: true
 
     - name: Generate intended variables
-      import_role:
+      include_role:
         name: eos_designs
 
     - ansible.builtin.file:
@@ -84,7 +84,7 @@
       run_once: true
    
     - name: Provision CV with AVD configuration
-      import_role:
+      include_role:
         name: cv_deploy
       vars:
         cv_server: tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
