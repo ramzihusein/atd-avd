@@ -89,7 +89,7 @@
       vars:
         cv_server: tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
         cv_token: "{{ lab_token }}"
-        cv_run_change_control: true
+        cv_run_change_control: false
  
 
     
