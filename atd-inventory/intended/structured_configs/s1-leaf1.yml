@@ -151,7 +151,7 @@ local_users:
 - name: arista
   privilege: 15
   role: network-admin
-  sha512_password: '{{ user_pass | password_hash(''sha512'', salt=''arista'') }}'
+  sha512_password: '$6$arista$KqijowGlfWMOsKrKrDWRU14llcBgxNzTEuqNFxw.y8mCNRmXAWpxf8y/GQnRJIlUu6O9nNkQRkXW44LHgpE.m/'
 vrfs:
 - name: default
   ip_routing: false
