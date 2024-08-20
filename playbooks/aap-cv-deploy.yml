@@ -21,6 +21,14 @@
       delegate_to: localhost
       run_once: true
 
+    - name: Generate intended variables
+      include_role:
+        name: eos_designs
+
+    - name: Generate device intended config and documentation
+      include_role:
+        name: eos_cli_config_gen
+
     - ansible.builtin.file:
          path: /tmp/atd-avd/atd-inventory/{{ item }}
          state: absent
@@ -39,7 +47,7 @@
           email: "{{ email }}"
       delegate_to: localhost
       run_once: true
-
+   
     - name: Retrieve a repository from a distant location and make it available to the local EE
       ansible.scm.git_retrieve:
         origin:
@@ -52,14 +60,6 @@
       delegate_to: localhost
       run_once: true
 
-    - name: Generate intended variables
-      include_role:
-        name: eos_designs
-
-    - name: Generate device intended config and documentation
-      include_role:
-        name: eos_cli_config_gen
- 
     - name: copy
       ansible.builtin.copy:
         dest: '{{ item.dest }}'
