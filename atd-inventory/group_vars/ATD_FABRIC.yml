@@ -73,7 +73,7 @@ l3leaf:
     spanning_tree_mode: mstp
     spanning_tree_priority: 16384
     filter:
-      # only_vlans_in_use: true
+      only_vlans_in_use: true
   node_groups:
     - group: pod1
       bgp_as: 65101
