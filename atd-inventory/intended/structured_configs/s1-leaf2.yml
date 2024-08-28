@@ -106,15 +106,6 @@ router_bgp:
     redistribute_routes:
     - learned
     vlan: '110'
-  - name: Tenant_A_VMOTION
-    tenant: Tenant_A
-    rd: 192.0.255.4:55160
-    route_targets:
-      both:
-      - 55160:55160
-    redistribute_routes:
-    - learned
-    vlan: '160'
 static_routes:
 - vrf: default
   destination_address_prefix: 0.0.0.0/0
@@ -188,9 +179,6 @@ vlans:
   name: MLAG_iBGP_Tenant_A_OP_Zone
   trunk_groups:
   - LEAF_PEER_L3
-  tenant: Tenant_A
-- id: 160
-  name: Tenant_A_VMOTION
   tenant: Tenant_A
 vlan_interfaces:
 - name: Vlan4093
@@ -346,8 +334,6 @@ vxlan_interface:
       vlans:
       - id: 110
         vni: 20110
-      - id: 160
-        vni: 55160
       vrfs:
       - name: Tenant_A_OP_Zone
         vni: 10
