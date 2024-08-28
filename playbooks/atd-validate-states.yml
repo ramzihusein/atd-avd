@@ -5,6 +5,9 @@
   gather_facts: false
   collections:
     - arista.avd
+  vars:
+   ansible_user: arista
+   ansible_password: aristaf721
   tasks:
 
     - name: Deploy configuration to device
