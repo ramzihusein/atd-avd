@@ -39,7 +39,6 @@ anta.tests.connectivity:
 - VerifyReachability:
     hosts:
     - destination: 172.30.255.7
-    
       repeat: 1
       source: 172.30.255.6
       vrf: default
