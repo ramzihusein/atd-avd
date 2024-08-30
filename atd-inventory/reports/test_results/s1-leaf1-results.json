@@ -67,7 +67,7 @@
     ],
     "description": "Verifies that the provided LLDP neighbors are connected properly.",
     "result": "success",
-    "custom_field": "Local: Ethernet2 - Remote: s1-spine1 Ethernet22"
+    "custom_field": "Local: Ethernet2 - Remote: s1-spine1 Ethernet2"
   },
   {
     "name": "s1-leaf1",
