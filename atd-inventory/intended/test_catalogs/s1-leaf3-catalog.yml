@@ -189,6 +189,25 @@ anta.tests.interfaces:
         = ''up'''
 - VerifyInterfacesStatus:
     interfaces:
+    - name: Vlan210
+      status: up
+    result_overwrite:
+      custom_field: Interface Vlan210 - Tenant_B_OP_Zone_1 = 'up'
+- VerifyInterfacesStatus:
+    interfaces:
+    - name: Vlan211
+      status: adminDown
+    result_overwrite:
+      custom_field: Interface Vlan211 - Tenant_B_OP_Zone_2 = 'adminDown'
+- VerifyInterfacesStatus:
+    interfaces:
+    - name: Vlan3019
+      status: up
+    result_overwrite:
+      custom_field: 'Interface Vlan3019 - MLAG_PEER_L3_iBGP: vrf Tenant_B_OP_Zone
+        = ''up'''
+- VerifyInterfacesStatus:
+    interfaces:
     - name: Loopback0
       status: up
     result_overwrite:
@@ -228,30 +247,6 @@ anta.tests.routing.bgp:
       - 192.0.255.2
     result_overwrite:
       custom_field: 'BGP EVPN Peer: s1-spine2 (IP: 192.0.255.2)'
-- VerifyBGPSpecificPeers:
-    address_families:
-    - afi: ipv4
-      peers:
-      - 10.255.251.5
-      safi: unicast
-    result_overwrite:
-      custom_field: 'BGP IPv4 Unicast Peer: s1-leaf4 (IP: 10.255.251.5)'
-- VerifyBGPSpecificPeers:
-    address_families:
-    - afi: ipv4
-      peers:
-      - 172.30.255.8
-      safi: unicast
-    result_overwrite:
-      custom_field: 'BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.30.255.8)'
-- VerifyBGPSpecificPeers:
-    address_families:
-    - afi: ipv4
-      peers:
-      - 172.30.255.10
-      safi: unicast
-    result_overwrite:
-      custom_field: 'BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.30.255.10)'
 anta.tests.routing.generic:
 - VerifyRoutingProtocolModel:
     model: multi-agent

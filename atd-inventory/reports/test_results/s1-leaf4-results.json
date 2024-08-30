@@ -21,36 +21,6 @@
   },
   {
     "name": "s1-leaf4",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s).",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf3 (IP: 10.255.251.4)"
-  },
-  {
-    "name": "s1-leaf4",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s).",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.30.255.12)"
-  },
-  {
-    "name": "s1-leaf4",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s).",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.30.255.14)"
-  },
-  {
-    "name": "s1-leaf4",
     "test": "VerifyLLDPNeighbors",
     "categories": [
       "connectivity"
@@ -341,7 +311,37 @@
     ],
     "description": "Verifies the status of the provided interfaces.",
     "result": "success",
+    "custom_field": "Interface Vlan210 - Tenant_B_OP_Zone_1 = 'up'"
+  },
+  {
+    "name": "s1-leaf4",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Vlan211 - Tenant_B_OP_Zone_2 = 'adminDown'"
+  },
+  {
+    "name": "s1-leaf4",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
     "custom_field": "Interface Vlan3009 - MLAG_PEER_L3_iBGP: vrf Tenant_A_OP_Zone = 'up'"
+  },
+  {
+    "name": "s1-leaf4",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Vlan3019 - MLAG_PEER_L3_iBGP: vrf Tenant_B_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf4",
