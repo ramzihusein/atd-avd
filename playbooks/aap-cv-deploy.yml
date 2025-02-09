@@ -58,7 +58,7 @@
       include_role:
         name: cv_deploy
       vars:
-        cv_server: tony-dubiel-redhat-1-6ae85504-eos.topo.testdrive-dev.arista.com
+        cv_server: ramzi-1-45021565-eos.topo.testdrive.arista.com
         cv_token: "{{ lab_token }}"
         cv_run_change_control: true
  
