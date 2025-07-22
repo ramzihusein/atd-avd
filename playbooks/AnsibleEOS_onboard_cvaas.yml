@@ -5,7 +5,7 @@
   gather_facts: no
   vars:
     cvaas_url: www.cv-prod-us-central1-c.arista.io
-    cvaas_service_token: "{{lookup('file', '/home/pbureau/tokens/ACT_redhat_token.tok')}}"       # Service Account auth token
+    cvaas_service_token: "{{lookup('file', '~/ACT_redhat_token.tok')}}"       # Service Account auth token
 
   tasks:
 # Generate token for CVaaS Canadian cluster
