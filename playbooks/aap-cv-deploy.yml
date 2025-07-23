@@ -59,7 +59,7 @@
         name: cv_deploy
       vars:
         cv_server: www.cv-prod-us-central1-c.arista.io
-        cv_token: "{{ lab_token }}"
+        cv_token: eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaWQiOjc0ODY1NTI2NjE4MTk0MzA1MTEsImRzbiI6IkFBUCIsImRzdCI6ImFjY291bnQiLCJleHAiOjE3ODQwODc5OTcsImlhdCI6MTc1MzI5ODYzOSwib2dpIjo3NDg2NTUyNjYxODE5NDE5NDk3LCJvZ24iOiJhcmlzdGEtbGFicy1pbnRlcm5hbC0xNyIsInNpZCI6IjAwNDc3YTU2MTczYzA1MDU0YjQ0NzhiYmE5NWQzOTg2OTBjMGNmMGUyYjViZWZhOGE4MjQxOWU5NDgyZDQ3NzctazR2UDhSMGJTdVRHWlFWQm5FVFY4LTVGd251VHJEVUlBY0ZZLVIweSJ9.75vohwKaipMKYZ4ngrF3tuc2-8Qzv_RUItAiIeMpJaTj36pqEMba6vFcYotAX9ZJynz3KHlD-FJQ7ohpoZKUhQ
         cv_run_change_control: true
  
 
