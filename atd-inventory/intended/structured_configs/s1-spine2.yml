@@ -3,10 +3,10 @@ aaa_root:
 config_end: true
 daemon_terminattr:
   cvaddrs:
-  - 192.168.0.5:9910
+  - apiserver.arista.io:443
   cvauth:
-    method: token
-    token_file: /tmp/token
+    method: token-secure
+    token_file: /tmp/cv-onboarding-token
   cvvrf: default
   disable_aaa: true
   ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
@@ -64,8 +64,6 @@ ethernet_interfaces:
     enabled: false
 hostname: s1-spine2
 ip_name_servers:
-- ip_address: 192.168.2.1
-  vrf: default
 - ip_address: 8.8.8.8
   vrf: default
 ip_routing: true
@@ -86,15 +84,14 @@ management_api_http:
   enable_vrfs:
   - name: default
 management_interfaces:
-- name: Management0
+- name: Management1
   description: OOB_MANAGEMENT
   shutdown: false
   vrf: default
   ip_address: 192.168.0.11/24
   type: oob
-  gateway: 192.168.0.1
 metadata:
-  platform: cEOS
+  platform: vEOS
   fabric_name: ATD_FABRIC
 router_bfd:
   multihop:
@@ -171,10 +168,6 @@ router_ospf:
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: none
-static_routes:
-- vrf: default
-  destination_address_prefix: 0.0.0.0/0
-  gateway: 192.168.0.1
 transceiver_qsfp_default_mode_4x10: true
 vlan_internal_order:
   allocation: ascending
