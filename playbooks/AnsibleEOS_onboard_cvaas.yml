@@ -2,10 +2,11 @@
 # This playbook will connect to CVaaS and generate an onboarding token than push the token to target devices and start terminattr 
 # The target devices will be onboarded in CVaaS
 - hosts: localhost
-  gather_facts: no
+  gather_facts: false
   vars:
     cvaas_url: www.cv-prod-us-central1-c.arista.io
-    cvaas_service_token: "{{lookup('file', '~/ACT_redhat_token.tok')}}"       # Service Account auth token
+    # service account token for CVaaS
+    cvaas_service_token: "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaWQiOjc0ODY1NTI2NjE4MTk0MjE5ODUsImRzbiI6ImxhYnMtc2VydmljZS1hY2NvdW50IiwiZHN0IjoiYWNjb3VudCIsImV4cCI6MTc4MzEzNzU5OSwiaWF0IjoxNzUzMjk1MDUwLCJvZ2kiOjc0ODY1NTI2NjE4MTk0MTk0OTcsIm9nbiI6ImFyaXN0YS1sYWJzLWludGVybmFsLTE3Iiwic2lkIjoiYmUwN2M5NzM1MzA1NzZlMDA3ZGZjMTVjOWU5NjY5NjUyYzcwMGJhMzFjOGQyYjlhMzAxZmM2MjFmYWI1NjU1NC1RSVFHdWtoeW5XN3ZEQ3ZmbXJNVmFlbzA3UVBVOEsyWjk0cGwxOHlQIn0.DEcE3L_3A-fr8y89WF2ekRCh9CXz5ZR7RQzVNIpaBfyzYq8x0XGfzxx9ecLcTLQxyasT2k60wGUy6EszEylXRA"
 
   tasks:
 # Generate token for CVaaS Canadian cluster
