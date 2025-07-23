@@ -1,5 +1,5 @@
 ---
-generic:
+tools-server:
   password: Arista123!
   username: arista
   version: ubuntu-2204-lts
@@ -7,6 +7,7 @@ veos:
   password: Arista123!
   username: arista
   version: 4.33.2F
+  internet_access: true
 
 nodes:
   - s1-leaf1:
@@ -39,7 +40,7 @@ nodes:
       ports: []
   - ansible:
       ip_addr: 192.168.0.6
-      node_type: generic
+      node_type: tools-server
   - s1-host1:
       ip_addr: 192.168.0.21
       node_type: veos
