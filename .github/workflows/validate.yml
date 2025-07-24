@@ -3,12 +3,12 @@
 name: "Network Validation"
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'atd-inventory/group_vars/**'
-      - 'atd-inventory/host_vars/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "The branch to validate"
+        required: true
+        default: "demo"
 
 jobs:
   validate:

@@ -1,0 +1,19 @@
+---
+- name: Trigger GitHub Action via Python Script
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    inputs:
+      environment: "demo"
+      debug_mode: "false"
+
+  tasks:
+    - name: Trigger GitHub workflow_dispatch
+      ansible.builtin.command: >
+        python3 scripts/validate_workflow.py '{{ inputs | to_json }}'
+      environment:
+        GITHUB_REPO: ramzihusein/atd-avd
+        WORKFLOW_FILE: validate.yml
+        GITHUB_TOKEN: "{{ lookup('env', 'GITHUB_PAT') }}"
+        GITHUB_REF: demo
