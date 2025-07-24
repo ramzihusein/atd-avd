@@ -15,5 +15,5 @@
       environment:
         GITHUB_REPO: ramzihusein/atd-avd
         WORKFLOW_FILE: validate.yml
-        GITHUB_TOKEN: "{{ lookup('env', 'GITHUB_PAT') }}"
+        GITHUB_TOKEN: "{{ token }}"
         GITHUB_REF: demo
