@@ -5,7 +5,7 @@
     "categories": [
       "bgp"
     ],
-    "description": "Verifies the health of specific BGP peer(s).",
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
     "result": "success",
     "custom_field": "BGP EVPN Peer: s1-spine1 (IP: 192.0.255.1)"
   },
@@ -15,9 +15,39 @@
     "categories": [
       "bgp"
     ],
-    "description": "Verifies the health of specific BGP peer(s).",
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
     "result": "success",
     "custom_field": "BGP EVPN Peer: s1-spine2 (IP: 192.0.255.2)"
+  },
+  {
+    "name": "s1-leaf1",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf2 (IP: 10.255.251.1)"
+  },
+  {
+    "name": "s1-leaf1",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.30.255.0)"
+  },
+  {
+    "name": "s1-leaf1",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.30.255.2)"
   },
   {
     "name": "s1-leaf1",
@@ -25,7 +55,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Verifies that the provided LLDP neighbors are connected properly.",
+    "description": "Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.",
     "result": "success",
     "custom_field": "Local: Ethernet1 - Remote: s1-leaf2 Ethernet1"
   },
@@ -35,7 +65,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Verifies that the provided LLDP neighbors are connected properly.",
+    "description": "Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.",
     "result": "success",
     "custom_field": "Local: Ethernet2 - Remote: s1-spine1 Ethernet2"
   },
@@ -45,7 +75,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Verifies that the provided LLDP neighbors are connected properly.",
+    "description": "Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.",
     "result": "success",
     "custom_field": "Local: Ethernet3 - Remote: s1-spine2 Ethernet2"
   },
@@ -55,7 +85,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Verifies that the provided LLDP neighbors are connected properly.",
+    "description": "Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.",
     "result": "success",
     "custom_field": "Local: Ethernet6 - Remote: s1-leaf2 Ethernet6"
   },
@@ -65,7 +95,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-leaf1 Loopback0 (IP: 192.0.255.3)"
   },
@@ -75,7 +105,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-leaf2 Loopback0 (IP: 192.0.255.4)"
   },
@@ -85,7 +115,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-leaf3 Loopback0 (IP: 192.0.255.5)"
   },
@@ -95,7 +125,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-leaf4 Loopback0 (IP: 192.0.255.6)"
   },
@@ -105,7 +135,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-spine1 Loopback0 (IP: 192.0.255.1)"
   },
@@ -115,7 +145,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: Loopback0 (IP: 192.0.255.3) - Destination: s1-spine2 Loopback0 (IP: 192.0.255.2)"
   },
@@ -125,7 +155,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: P2P Interface Ethernet2 (IP: 172.30.255.1) - Destination: s1-spine1 Ethernet2 (IP: 172.30.255.0)"
   },
@@ -135,7 +165,7 @@
     "categories": [
       "connectivity"
     ],
-    "description": "Test the network reachability to one or many destination IP(s).",
+    "description": "Test network reachability to one or many destination IP(s).",
     "result": "success",
     "custom_field": "Source: P2P Interface Ethernet3 (IP: 172.30.255.3) - Destination: s1-spine2 Ethernet2 (IP: 172.30.255.2)"
   },
@@ -148,7 +178,7 @@
     "description": "Verifies the status of power supply fans and all fan trays.",
     "result": "skipped",
     "messages": [
-      "VerifyEnvironmentCooling test is not supported on cEOSLab."
+      "VerifyEnvironmentCooling test is not supported on vEOS-lab"
     ],
     "custom_field": "Accepted States: 'ok'"
   },
@@ -161,7 +191,7 @@
     "description": "Verifies the power supplies status.",
     "result": "skipped",
     "messages": [
-      "VerifyEnvironmentPower test is not supported on cEOSLab."
+      "VerifyEnvironmentPower test is not supported on vEOS-lab"
     ],
     "custom_field": "Accepted States: 'ok'"
   },
@@ -171,10 +201,10 @@
     "categories": [
       "hardware"
     ],
-    "description": "Verifies the device temperature.",
+    "description": "Verifies if the device temperature is within acceptable limits.",
     "result": "skipped",
     "messages": [
-      "VerifyTemperature test is not supported on cEOSLab."
+      "VerifyTemperature test is not supported on vEOS-lab"
     ]
   },
   {
@@ -183,10 +213,10 @@
     "categories": [
       "hardware"
     ],
-    "description": "Verifies if all transceivers come from approved manufacturers.",
+    "description": "Verifies if all the transceivers come from approved manufacturers.",
     "result": "skipped",
     "messages": [
-      "VerifyTransceiversManufacturers test is not supported on cEOSLab."
+      "VerifyTransceiversManufacturers test is not supported on vEOS-lab"
     ],
     "custom_field": "Accepted Manufacturers: 'Arista Networks', 'Arastra, Inc.', 'Not Present'"
   },
@@ -196,9 +226,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Ethernet1 - MLAG_PEER_s1-leaf2_Ethernet1 = 'up'"
+    "custom_field": "Interface Ethernet1 - MLAG_s1-leaf2_Ethernet1 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -206,9 +236,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Ethernet2 - P2P_LINK_TO_S1-SPINE1_Ethernet2 = 'up'"
+    "custom_field": "Interface Ethernet2 - P2P_s1-spine1_Ethernet2 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -216,9 +246,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Ethernet3 - P2P_LINK_TO_S1-SPINE2_Ethernet2 = 'up'"
+    "custom_field": "Interface Ethernet3 - P2P_s1-spine2_Ethernet2 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -226,9 +256,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Ethernet4 - s1-host1_Eth1 = 'up'"
+    "custom_field": "Interface Ethernet4 - SERVER_s1-host1_Eth1 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -236,9 +266,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Ethernet6 - MLAG_PEER_s1-leaf2_Ethernet6 = 'up'"
+    "custom_field": "Interface Ethernet6 - MLAG_s1-leaf2_Ethernet6 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -246,9 +276,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Loopback0 - EVPN_Overlay_Peering = 'up'"
+    "custom_field": "Interface Loopback0 - ROUTER_ID = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -256,9 +286,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Loopback1 - VTEP_VXLAN_Tunnel_Source = 'up'"
+    "custom_field": "Interface Loopback1 - VXLAN_TUNNEL_SOURCE = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -266,9 +296,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Loopback100 - Tenant_A_OP_Zone_VTEP_DIAGNOSTICS = 'up'"
+    "custom_field": "Interface Loopback100 - DIAG_VRF_Tenant_A_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -276,9 +306,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Port-Channel1 - MLAG_PEER_s1-leaf2_Po1 = 'up'"
+    "custom_field": "Interface Port-Channel1 - MLAG_s1-leaf2_Port-Channel1 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -286,12 +316,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
-    "result": "failure",
-    "messages": [
-      "The following interface(s) are not in the expected state: ['Port-Channel4 is down/lowerLayerDown']"
-    ],
-    "custom_field": "Interface Port-Channel4 - s1-host1_PortChannel = 'up'"
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
+    "custom_field": "Interface Port-Channel4 - PortChannel = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -299,7 +326,7 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
     "custom_field": "Interface Vlan110 - Tenant_A_OP_Zone_1 = 'up'"
   },
@@ -309,7 +336,7 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
     "custom_field": "Interface Vlan210 - Tenant_B_OP_Zone_1 = 'up'"
   },
@@ -319,7 +346,7 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
     "custom_field": "Interface Vlan211 - Tenant_B_OP_Zone_2 = 'adminDown'"
   },
@@ -329,9 +356,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Vlan3009 - MLAG_PEER_L3_iBGP: vrf Tenant_A_OP_Zone = 'up'"
+    "custom_field": "Interface Vlan3009 - MLAG_L3_VRF_Tenant_A_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -339,9 +366,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Vlan3019 - MLAG_PEER_L3_iBGP: vrf Tenant_B_OP_Zone = 'up'"
+    "custom_field": "Interface Vlan3019 - MLAG_L3_VRF_Tenant_B_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -349,9 +376,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Vlan4093 - MLAG_PEER_L3_PEERING = 'up'"
+    "custom_field": "Interface Vlan4093 - MLAG_L3 = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -359,9 +386,9 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Vlan4094 - MLAG_PEER = 'up'"
+    "custom_field": "Interface Vlan4094 - MLAG = 'up'"
   },
   {
     "name": "s1-leaf1",
@@ -369,7 +396,7 @@
     "categories": [
       "interfaces"
     ],
-    "description": "Verifies the status of the provided interfaces.",
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
     "custom_field": "Interface Vxlan1 = 'up'"
   },
@@ -479,6 +506,15 @@
       "system"
     ],
     "description": "Verifies if NTP is synchronised.",
+    "result": "success"
+  },
+  {
+    "name": "s1-leaf1",
+    "test": "VerifyReloadCause",
+    "categories": [
+      "system"
+    ],
+    "description": "Verifies the last reload cause of the device.",
     "result": "success"
   }
 ]
