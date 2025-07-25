@@ -6,7 +6,7 @@
   vars:
     inputs:
       environment: "demo"
-      debug_mode: "false"
+      #debug_mode: "false"
 
   tasks:
     - name: Trigger GitHub workflow_dispatch
