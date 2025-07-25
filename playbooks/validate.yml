@@ -1,0 +1,25 @@
+---
+- name: Validate Network State
+  hosts: ATD_LAB
+  connection: httpapi
+  gather_facts: false
+
+  vars:
+    ansible_network_os: arista.eos.eos
+    # Configure privilege escalation
+    ansible_become: true
+    ansible_become_method: enable
+    # HTTPAPI configuration
+    ansible_connection: httpapi
+    ansible_httpapi_port: 443
+    ansible_httpapi_use_ssl: true
+    ansible_httpapi_validate_certs: false
+
+  tasks:
+
+    - name: Validate
+      ansible.builtin.import_role:
+        name: arista.avd.anta_runner
+      vars:
+        avd_catalogs_filters:
+         - skip_tests: [ VerifyEnvironmentCooling, VerifyEnvironmentPower, VerifyEnvironmentSystemCooling ]
