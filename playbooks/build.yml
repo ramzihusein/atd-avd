@@ -1,0 +1,17 @@
+---
+- name: Build Configs
+  hosts: ATD_FABRIC
+  connection: local
+  gather_facts: false
+  collections:
+    - arista.avd
+
+  tasks:
+
+    - name: Generate intended variables
+      include_role:
+        name: eos_designs
+
+    - name: Generate device intended config and documentation
+      include_role:
+        name: eos_cli_config_gen
