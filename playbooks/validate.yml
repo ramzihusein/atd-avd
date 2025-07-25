@@ -20,7 +20,7 @@
 
     - name: Validate
       ansible.builtin.import_role:
-        name: arista.avd.anta_runner
-      vars:
-        avd_catalogs_filters:
-         - skip_tests: [ VerifyEnvironmentCooling, VerifyEnvironmentPower, VerifyEnvironmentSystemCooling ]
+        name: arista.avd.eos_validate_state
+      # vars:
+      #   avd_catalogs_filters:
+      #    - skip_tests: [ VerifyEnvironmentCooling, VerifyEnvironmentPower, VerifyEnvironmentSystemCooling ]
