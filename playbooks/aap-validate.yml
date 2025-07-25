@@ -16,4 +16,4 @@
         GITHUB_REPO: ramzihusein/atd-avd
         WORKFLOW_FILE: validate.yml
         GITHUB_TOKEN: "{{ token }}"
-        GITHUB_REF: demo
+        #GITHUB_REF: demo
