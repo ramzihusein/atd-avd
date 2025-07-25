@@ -3,7 +3,7 @@
   hosts: ATD_LAB
   connection: httpapi
   gather_facts: false
-  ignore_errors: true
+
 
   vars:
     ansible_network_os: arista.eos.eos
