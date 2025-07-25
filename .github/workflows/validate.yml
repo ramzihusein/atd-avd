@@ -13,21 +13,30 @@ on:
 jobs:
   validate:
     runs-on: self-hosted
-    container:
-      image: ghcr.io/aristanetworks/avd/universal:python3.10-avd-v5.5.0
-      options: --user 1001:121
     env:
       ANSIBLE_USERNAME: ${{ secrets.ANSIBLE_USERNAME }}
       ANSIBLE_PASSWORD: ${{ secrets.ANSIBLE_PASSWORD }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run Validation Playbook
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Ansible and AVD roles
+        run: |
+          pip install "pyavd[ansible]"
+          pip install "ansible-core==2.17.3"
+          ansible-galaxy collection install arista.avd
+          ansible-galaxy collection install arista.eos:">=7.0.0"
+          ansible-galaxy collection install ansible.utils:">=3.0.0"
+          
+      - name: Run AVD Validate State
         run: |
           ansible-playbook playbooks/validate.yml
-
+          
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
