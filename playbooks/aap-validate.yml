@@ -5,7 +5,7 @@
 
   vars:
     inputs:
-      environment: "demo"
+      environment: "master"
       #debug_mode: "false"
 
   tasks:
@@ -16,4 +16,4 @@
         GITHUB_REPO: ramzihusein/atd-avd
         WORKFLOW_FILE: validate.yml
         GITHUB_TOKEN: "{{ token }}"
-        #GITHUB_REF: demo
+        GITHUB_REF: master
