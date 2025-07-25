@@ -9,7 +9,7 @@ import json
 GITHUB_REPO = os.environ.get("GITHUB_REPO")        # Format: "owner/repo"
 WORKFLOW_FILE = os.environ.get("WORKFLOW_FILE")    # e.g., "manual-run.yml"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")      # GitHub PAT with `workflow` scope
-GITHUB_REF = os.environ.get("GITHUB_REF", "master")  # Branch to run against
+GITHUB_REF = os.environ.get("GITHUB_REF", "validation-workflow")  # Branch to run against
 
 # Optional input arguments passed as JSON string
 inputs = {}
