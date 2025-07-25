@@ -35,7 +35,7 @@ jobs:
           
       - name: Run AVD Validate State
         run: |
-          ansible-playbook playbooks/validate.yml -e 'ansible_password=Arista123! ignore_errors=True'
+          ansible-playbook playbooks/validate.yml -e 'ansible_password=Arista123!' -vvv
           
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
