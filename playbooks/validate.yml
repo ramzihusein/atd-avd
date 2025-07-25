@@ -3,6 +3,7 @@
   hosts: ATD_LAB
   connection: httpapi
   gather_facts: false
+  ignore_errors: true
 
   vars:
     ansible_network_os: arista.eos.eos
@@ -18,7 +19,6 @@
   tasks:
 
     - name: Validate
-      ignore_errors: true
       ansible.builtin.import_role:
         name: arista.avd.anta_runner
       vars:
