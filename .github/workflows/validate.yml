@@ -1,5 +1,3 @@
----
-
 name: "Network Validation"
 
 on:
@@ -19,6 +17,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.inputs.environment }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -33,15 +34,28 @@ jobs:
           ansible-galaxy collection install arista.avd
           ansible-galaxy collection install arista.eos:">=7.0.0"
           ansible-galaxy collection install ansible.utils:">=3.0.0"
-          
-      - name: Run AVD Validate State
+
+      - name: Run AVD Build
         run: |
           ansible-playbook playbooks/build.yml
+
       - name: Run AVD Validate State
         run: |
           ansible-playbook playbooks/validate.yml -e 'ansible_password=Arista123!' -vvv
-          
-      - name: Upload Artifact
+
+      - name: Commit and push validation reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add atd-inventory/reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Update validation reports on ${{ github.event.inputs.environment }}"
+            git push origin ${{ github.event.inputs.environment }}
+          fi
+
+      - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
           name: validation-report
