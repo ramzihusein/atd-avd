@@ -23,13 +23,13 @@
         method: GET
         return_content: true
         body_format: json
-      register: results  
+#      register: results  
       retries: 100
       delay: 10
-#      until: results.content.workflow_runs[0].conclusion == "success"
-    - name: output api results
-      debug:
-        var: results
+      until: json.workflow_runs[0].conclusion == "success"
+#    - name: output api results
+#      debug:
+#        var: results
 #    - name: Wait for validation to complete successfully
 #      ansible.builtin.uri:
 #        url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs/{{ runs.workflow_runs[0].id }}
@@ -39,4 +39,4 @@
 #      register: results
 #      retries: 100
 #      delay: 10
-#      until: results.status == "success"
+#     until: results.content.status == "success"
