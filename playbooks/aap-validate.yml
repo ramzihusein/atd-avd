@@ -21,12 +21,12 @@
       ansible.builtin.uri:
         url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs
         method: GET
-        return_content: true
+#        return_content: true
         body_format: json
-#      register: results  
+      register: results  
       retries: 100
       delay: 10
-      until: json.workflow_runs[0].conclusion == "success"
+      until: results.json.workflow_runs[0].conclusion == "success"
 #    - name: output api results
 #      debug:
 #        var: results
