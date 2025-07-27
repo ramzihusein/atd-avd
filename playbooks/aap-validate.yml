@@ -17,3 +17,20 @@
         WORKFLOW_FILE: validate.yml
         GITHUB_TOKEN: "{{ token }}"
         GITHUB_REF: master
+    - name: Wait for validation to complete successfully
+      ansible.builtin.uri:
+        url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs/
+        method: GET
+        return_content: true
+        body_format: json
+      register: runs
+    - name: Wait for validation to complete successfully
+      ansible.builtin.uri:
+        url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs/{{ runs.workflow_runs[0].id }}
+        method: GET
+        return_content: true
+        body_format: json
+      register: results
+      retries: 100
+      delay: 10
+      until: results.status == "success"
