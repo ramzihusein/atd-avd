@@ -23,7 +23,7 @@
         method: GET
         return_content: true
         body_format: json
-      register: "{{ results | to_json }}" 
+      register: results  
       retries: 100
       delay: 10
       until: results.content.workflow_runs[0].conclusion == "success"
