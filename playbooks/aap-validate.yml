@@ -19,7 +19,7 @@
         GITHUB_REF: master
     - name: Wait for validation to complete successfully
       ansible.builtin.uri:
-        url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs/
+        url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs
         method: GET
         return_content: true
         body_format: json
