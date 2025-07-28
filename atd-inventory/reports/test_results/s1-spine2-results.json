@@ -41,46 +41,6 @@
   },
   {
     "name": "s1-spine2",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s) for given address families.",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf1 (IP: 172.30.255.3)"
-  },
-  {
-    "name": "s1-spine2",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s) for given address families.",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf2 (IP: 172.30.255.7)"
-  },
-  {
-    "name": "s1-spine2",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s) for given address families.",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf3 (IP: 172.30.255.11)"
-  },
-  {
-    "name": "s1-spine2",
-    "test": "VerifyBGPSpecificPeers",
-    "categories": [
-      "bgp"
-    ],
-    "description": "Verifies the health of specific BGP peer(s) for given address families.",
-    "result": "success",
-    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf4 (IP: 172.30.255.15)"
-  },
-  {
-    "name": "s1-spine2",
     "test": "VerifyLLDPNeighbors",
     "categories": [
       "connectivity"
