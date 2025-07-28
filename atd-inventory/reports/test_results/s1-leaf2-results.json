@@ -21,6 +21,36 @@
   },
   {
     "name": "s1-leaf2",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-leaf1 (IP: 10.255.251.0)"
+  },
+  {
+    "name": "s1-leaf2",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-spine1 (IP: 172.30.255.4)"
+  },
+  {
+    "name": "s1-leaf2",
+    "test": "VerifyBGPSpecificPeers",
+    "categories": [
+      "bgp"
+    ],
+    "description": "Verifies the health of specific BGP peer(s) for given address families.",
+    "result": "success",
+    "custom_field": "BGP IPv4 Unicast Peer: s1-spine2 (IP: 172.30.255.6)"
+  },
+  {
+    "name": "s1-leaf2",
     "test": "VerifyLLDPNeighbors",
     "categories": [
       "connectivity"
@@ -308,7 +338,37 @@
     ],
     "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
+    "custom_field": "Interface Vlan210 - Tenant_B_OP_Zone_1 = 'up'"
+  },
+  {
+    "name": "s1-leaf2",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
+    "custom_field": "Interface Vlan211 - Tenant_B_OP_Zone_2 = 'adminDown'"
+  },
+  {
+    "name": "s1-leaf2",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
     "custom_field": "Interface Vlan3009 - MLAG_L3_VRF_Tenant_A_OP_Zone = 'up'"
+  },
+  {
+    "name": "s1-leaf2",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
+    "result": "success",
+    "custom_field": "Interface Vlan3019 - MLAG_L3_VRF_Tenant_B_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf2",
