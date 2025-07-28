@@ -17,6 +17,9 @@
         WORKFLOW_FILE: validate.yml
         GITHUB_TOKEN: "{{ token }}"
         GITHUB_REF: master
+    - name: Wait for new workflow run to begin
+      ansible.builtin.wait_for:
+        timeout: 10
     - name: Wait for validation to complete successfully
       ansible.builtin.uri:
         url: https://api.github.com/repos/ramzihusein/atd-avd/actions/runs
