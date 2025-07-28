@@ -308,37 +308,7 @@
     ],
     "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
     "result": "success",
-    "custom_field": "Interface Vlan210 - Tenant_B_OP_Zone_1 = 'up'"
-  },
-  {
-    "name": "s1-leaf1",
-    "test": "VerifyInterfacesStatus",
-    "categories": [
-      "interfaces"
-    ],
-    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
-    "result": "success",
-    "custom_field": "Interface Vlan211 - Tenant_B_OP_Zone_2 = 'adminDown'"
-  },
-  {
-    "name": "s1-leaf1",
-    "test": "VerifyInterfacesStatus",
-    "categories": [
-      "interfaces"
-    ],
-    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
-    "result": "success",
     "custom_field": "Interface Vlan3009 - MLAG_L3_VRF_Tenant_A_OP_Zone = 'up'"
-  },
-  {
-    "name": "s1-leaf1",
-    "test": "VerifyInterfacesStatus",
-    "categories": [
-      "interfaces"
-    ],
-    "description": "Verifies the operational states of specified interfaces to ensure they match expected configurations.",
-    "result": "success",
-    "custom_field": "Interface Vlan3019 - MLAG_L3_VRF_Tenant_B_OP_Zone = 'up'"
   },
   {
     "name": "s1-leaf1",
